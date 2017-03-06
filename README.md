@@ -73,7 +73,7 @@ def compile_into_spirv(raw, stage, filepath, language="glsl",
 
 So simple !
 
-```
+```python
 import pyshaderc
 spirv = pyshaderc.compile_file_into_spirv('/tmp/myshader.vs.glsl', 'vert')
 ```
