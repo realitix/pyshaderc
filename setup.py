@@ -1,9 +1,11 @@
 from setuptools import setup, find_packages
 
+import pyshaderc
+
 
 setup(
     name="pyshaderc",
-    version='1.0.0',
+    version=pyshaderc.__version__,
     author="realitix",
     author_email="realitix@gmail.com",
     description="Python CFFI binding for shaderc",

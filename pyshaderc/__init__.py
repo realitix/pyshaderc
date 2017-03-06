@@ -2,7 +2,12 @@ from os import path
 
 from pyshaderc._pyshaderc import ffi, lib
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
+__all__ = [
+    'set_include_paths',
+    'compile_file_into_spirv',
+    'compile_into_spirv'
+]
 
 
 # Exceptions
@@ -129,7 +134,7 @@ def release_callback(user_data, include_result):
 
 # Public API
 def set_include_paths(paths):
-    """Return include paths
+    """Set include paths
 
     This function allow you to update the include paths.
     Include paths are used with #include <file>.
