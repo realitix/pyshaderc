@@ -2,12 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
     name="pyshaderc",
-    version='1.0.4',  # can't use pyshader.__version__
+    version='1.0.5',  # can't use pyshader.__version__
     author="realitix",
     author_email="realitix@gmail.com",
     description="Python CFFI binding for shaderc",
     long_description="Python CFFI binding for shaderc",
-    packages=find_packages(),
+    packages=['_cffi_build', 'pyshaderc'],
     install_requires=["cffi"],
     setup_requires=["cffi"],
     include_package_data=True,
