@@ -67,6 +67,12 @@ def compile_into_spirv(raw, stage, filepath, language="glsl",
     """
 ```
 
+## Installation
+
+```python
+pip install pyshaderc
+```
+
 ## How to use it
 
 ### Getting started
