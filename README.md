@@ -9,7 +9,7 @@ library to compile glsl.
 
 ## API
 
-```
+```python
 def set_include_paths(paths):
     """Return include paths
 
