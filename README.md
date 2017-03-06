@@ -3,7 +3,7 @@
 ## What is it ?
 
 This module allow you to compile glsl to Spir-V in Python.
-It leverage power of the great [shaderc](https://github.com/google/shaderc)
+It leverages power of the great [shaderc](https://github.com/google/shaderc)
 library to compile glsl.
 
 
@@ -11,9 +11,9 @@ library to compile glsl.
 
 ```python
 def set_include_paths(paths):
-    """Return include paths
+    """Set include paths
 
-    This function allow you to update the include paths.
+    This function allows you to update the include paths.
     Include paths are used with #include <file>.
 
     Args:
@@ -92,8 +92,8 @@ Include file relatively, it's intuitive.
 
 **`#include <myfile>`**
 
-Like in C, you can include from a list of path. To use this way to include,
-you must call `set_include_paths` with a list of directory to search for
+Like in C, you can include from a list of paths. To use this way to include,
+you must call `set_include_paths` with a list of directories to search for
 before compiling your glsl code.
 
 

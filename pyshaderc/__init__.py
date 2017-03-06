@@ -128,7 +128,7 @@ def resolve_callback(user_data, requested_source, include_type,
 
 @ffi.def_extern()
 def release_callback(user_data, include_result):
-    # don't need to release, cffi internaly free it
+    # don't need to release include_result, cffi internaly frees it
     pass
 
 
@@ -136,7 +136,7 @@ def release_callback(user_data, include_result):
 def set_include_paths(paths):
     """Set include paths
 
-    This function allow you to update the include paths.
+    This function allows you to update the include paths.
     Include paths are used with #include <file>.
 
     Args:
