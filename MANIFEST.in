@@ -1,2 +1,4 @@
 include *.md *.txt *.rst
-recursive-include _cffi_build *.h *.zip
+include _cffi_build *.h *.zip
+prune _cffi_build/shaderc
+prune _cffi_build/shaderc_build

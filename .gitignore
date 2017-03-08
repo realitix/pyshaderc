@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+_cffi_build/libshaderc_combined.a
+_cffi_build/shaderc
+_cffi_build/shaderc_build

@@ -13,6 +13,7 @@ HERE = path.dirname(path.realpath(__file__))
 SHADERC_ZIP = path.join(HERE, 'shaderc-cb4f0f6.zip')
 SHADERC_SRC = path.join(HERE, 'shaderc')
 SHADERC_BIN = path.join(HERE, 'shaderc_build')
+STATIC_LIB_FOLDER = path.join(SHADERC_BIN, 'libshaderc')
 
 
 # ----------
@@ -25,10 +26,6 @@ def clean_build():
         pass
     try:
         shutil.rmtree(SHADERC_SRC)
-    except:
-        pass
-    try:
-        os.remove(path.join(HERE, 'libshaderc_combined.a'))
     except:
         pass
 
@@ -68,12 +65,6 @@ def build():
     subprocess.check_call(['make', cpu, '-C', SHADERC_BIN],
                           stderr=subprocess.STDOUT, shell=shell)
 
-    # copy static library
-    lib_name = 'libshaderc_combined.a'
-    src_file = path.join(SHADERC_BIN, 'libshaderc', lib_name)
-    dst_file = path.join(HERE, lib_name)
-    shutil.copyfile(src_file, dst_file)
-
 
 build()
 
@@ -108,4 +99,5 @@ l = ['shaderc_combined', 'stdc++']
 
 # configure cffi
 ffi.cdef(cdef)
-ffi.set_source('_pyshaderc', source, libraries=l, library_dirs=[HERE])
+ffi.set_source('_pyshaderc', source, libraries=l,
+               library_dirs=[STATIC_LIB_FOLDER])
