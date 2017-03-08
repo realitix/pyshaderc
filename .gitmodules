@@ -1,3 +1,0 @@
-[submodule "_cffi_build/shaderc"]
-	path = _cffi_build/shaderc
-	url = https://github.com/google/shaderc.git
