@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pyshaderc",
-    version='1.0.5',  # can't use pyshader.__version__
+    version='1.0.6',  # can't use pyshader.__version__
     author="realitix",
     author_email="realitix@gmail.com",
     description="Python CFFI binding for shaderc",
@@ -13,7 +13,7 @@ setup(
     include_package_data=True,
     url="http://github.com/realitix/pyshaderc",
     classifiers=[
-        "Development Status :: 1 - Planning",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: Apache Software License",
         "Natural Language :: English",

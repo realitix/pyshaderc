@@ -69,6 +69,8 @@ def compile_into_spirv(raw, stage, filepath, language="glsl",
 
 ## Installation
 
+**Note: You need `cmake`, `make` and `libffi-dev`**
+
 ```python
 pip install pyshaderc
 ```
@@ -103,12 +105,7 @@ you must call `set_include_paths` with a list of directories to search for
 before compiling your glsl code.
 
 
-## How to build
+## How to update shaderc
 
-**`libshaderc_combined.a`**
-
-PyShaderc is statically linked with `libshaderc_combined.a`. To build this
-static library, follow the shaderc README.
-Nevertheless, there is a small thing to note, when you compile shaderc,
-you must add the -fpic field.
-To do so, add `-DCMAKE_C_FLAGS=-fpic -DCMAKE_CXX_FLAGS=-fpic` when you call `cmake`.
+Download the last shaderc version on github, put the third party libs in it
+and just zip it. Then update the build script with the new zip name.
