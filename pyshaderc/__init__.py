@@ -2,7 +2,7 @@ from os import path
 
 from pyshaderc._pyshaderc import ffi, lib
 
-__version__ = '1.0.8'
+__version__ = '1.0.9'
 __all__ = [
     'set_include_paths',
     'compile_file_into_spirv',

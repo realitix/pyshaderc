@@ -109,3 +109,17 @@ before compiling your glsl code.
 
 Download the last shaderc version on github, put the third party libs in it
 and just zip it. Then update the build script with the new zip name.
+
+
+## Community
+
+You can checkout my blog, I speak about **PyShaderc**:
+[Blog](https://realitix.github.io)
+
+## Supported By
+
+PyShaderc is supported by helpful 3rd parties via code contributions, test devices and so forth.
+Make our supporters happy and visit their sites!
+
+![linagora](https://www.linagora.com/sites/all/themes/tux/logo.png)
+
