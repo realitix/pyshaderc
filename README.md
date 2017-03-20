@@ -28,7 +28,7 @@ def compile_file_into_spirv(filepath, stage, optimization='size',
     code.
 
     Args:
-        filepath (strs): Absolute path to your shader file
+        filepath (str): Absolute path to your shader file
         stage (str): Pipeline stage in ['vert', 'tesc', 'tese', 'geom',
                      'frag', 'comp']
         optimization (str): 'zero' (no optimization) or 'size' (reduce size)
@@ -69,7 +69,7 @@ def compile_into_spirv(raw, stage, filepath, language="glsl",
 
 ## Installation
 
-**Note: You need `cmake`, `make` and `libffi-dev`**
+**Note: You need `cmake` and `make`**
 
 ```python
 pip install pyshaderc
