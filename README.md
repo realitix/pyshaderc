@@ -1,5 +1,19 @@
 # PyShaderc
 
+Table of Contents
+=================
+
+  * [What is it ?](#what-is-it-)
+  * [API](#api)
+  * [Installation](#installation)
+  * [How to use it](#how-to-use-it)
+    * [Getting started](#getting-started)
+    * [Include support](#include-support)
+  * [How to update shaderc](#how-to-update-shaderc)
+  * [Community](#community)
+  * [Supported By](#supported-by)
+
+
 ## What is it ?
 
 This module allow you to compile glsl to Spir-V in Python.
