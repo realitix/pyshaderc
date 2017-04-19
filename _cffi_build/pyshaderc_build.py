@@ -49,10 +49,10 @@ def build():
 
     if platform.system() == 'Windows':
         options += [
-            '-DCMAKE_C_FLAGS=" /nologo /EHSC"',
-            '-DCMAKE_CXX_FLAGS=" /nologo /EHSC"',
-            '-DCMAKE_C_FLAGS_RELEASE=" /nologo /EHSC"',
-            '-DCMAKE_CXX_FLAGS_RELEASE=" /nologo /EHSC"'
+            '-DCMAKE_C_FLAGS=" /nologo /EHsc"',
+            '-DCMAKE_CXX_FLAGS=" /nologo /EHsc"',
+            '-DCMAKE_C_FLAGS_RELEASE=" /nologo /EHsc"',
+            '-DCMAKE_CXX_FLAGS_RELEASE=" /nologo /EHsc"'
         ]
 
     call = ['cmake', '-B'+SHADERC_BIN, '-H'+SHADERC_SRC]
