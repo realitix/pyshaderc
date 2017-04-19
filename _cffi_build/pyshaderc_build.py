@@ -4,7 +4,6 @@ from os import path
 import os
 import platform
 import shutil
-import sys
 import subprocess
 from zipfile import ZipFile
 
@@ -39,8 +38,8 @@ def build():
     z.close()
     os.makedirs(SHADERC_BIN)
 
-    # Cmake
-    shell = sys.platform.startswith('win')
+    # Prepare
+    shell = platform.system() == 'Windows'
     options = [
         '-DCMAKE_BUILD_TYPE=Release',
         '-DCMAKE_POSITION_INDEPENDENT_CODE=ON',
@@ -60,9 +59,12 @@ def build():
     call += options
     subprocess.check_call(call, stderr=subprocess.STDOUT, shell=shell)
 
-    # make
-    cpu = '-j' + str(multiprocessing.cpu_count() * 2)
-    subprocess.check_call(['make', cpu, '-C', SHADERC_BIN],
+    # Build
+    cpu = ''
+    if platform.system() == 'Linux':
+        cpu = '-j' + str(multiprocessing.cpu_count() * 2)
+
+    subprocess.check_call(['cmake', '--build', SHADERC_BIN, '--', cpu],
                           stderr=subprocess.STDOUT, shell=shell)
 
 

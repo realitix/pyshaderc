@@ -83,7 +83,9 @@ def compile_into_spirv(raw, stage, filepath, language="glsl",
 
 ## Installation
 
-**Note: You need `cmake` and `make`**
+**Note (Linux): You need `cmake` and `make`**
+
+**Note (Windows): You need `cmake` and [Visual C++ 2015 Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools)**
 
 ```python
 pip install pyshaderc
