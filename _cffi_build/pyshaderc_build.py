@@ -3,7 +3,6 @@ import multiprocessing
 from os import path
 import os
 import platform
-import shutil
 import subprocess
 from zipfile import ZipFile
 
@@ -18,25 +17,15 @@ STATIC_LIB_FOLDER = path.join(SHADERC_BIN, 'libshaderc')
 # ----------
 # BUILD STATIC LIB
 # ----------
-def clean_build():
-    try:
-        shutil.rmtree(SHADERC_BIN)
-    except:
-        pass
-    try:
-        shutil.rmtree(SHADERC_SRC)
-    except:
-        pass
-
-
 def build():
-    clean_build()
-
     # Extract shaderc
-    z = ZipFile(SHADERC_ZIP)
-    z.extractall(HERE)
-    z.close()
-    os.makedirs(SHADERC_BIN)
+    if not path.exists(SHADERC_ZIP):
+        z = ZipFile(SHADERC_ZIP)
+        z.extractall(HERE)
+        z.close()
+
+    if not path.exists(SHADERC_BIN):
+        os.makedirs(SHADERC_BIN)
 
     # Prepare
     shell = platform.system() == 'Windows'
@@ -97,7 +86,7 @@ source = """
 source += raw_header
 
 # libraries path
-l = ['shaderc_combined', 'stdc++']
+l = ['shaderc_combined']
 
 # configure cffi
 ffi.cdef(cdef)
