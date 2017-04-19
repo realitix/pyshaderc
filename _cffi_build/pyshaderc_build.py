@@ -19,7 +19,7 @@ STATIC_LIB_FOLDER = path.join(SHADERC_BIN, 'libshaderc')
 # ----------
 def build():
     # Extract shaderc
-    if not path.exists(SHADERC_ZIP):
+    if not path.exists(SHADERC_SRC):
         z = ZipFile(SHADERC_ZIP)
         z.extractall(HERE)
         z.close()
