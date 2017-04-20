@@ -38,10 +38,11 @@ def build():
 
     if platform.system() == 'Windows':
         options += [
-            '-DCMAKE_C_FLAGS=/nologo /EHsc',
-            '-DCMAKE_CXX_FLAGS=/nologo /EHsc',
-            '-DCMAKE_C_FLAGS_RELEASE=/nologo /EHsc',
-            '-DCMAKE_CXX_FLAGS_RELEASE=/nologo /EHsc'
+            '-DCMAKE_C_FLAGS=/nologo /EHsc /MD',
+            '-DCMAKE_CXX_FLAGS=/nologo /EHsc /MD',
+            '-DCMAKE_C_FLAGS_RELEASE=/nologo /EHsc /MD',
+            '-DCMAKE_CXX_FLAGS_RELEASE=/nologo /EHsc /MD',
+            '-DSHADERC_ENABLE_SHARED_CRT=ON'
         ]
 
     call = ['cmake', '-B'+SHADERC_BIN, '-H'+SHADERC_SRC]
@@ -53,8 +54,9 @@ def build():
     if platform.system() == 'Linux':
         cpu = '-j' + str(multiprocessing.cpu_count() * 2)
 
-    subprocess.check_call(['cmake', '--build', SHADERC_BIN, '--', cpu],
-                          stderr=subprocess.STDOUT, shell=shell)
+    subprocess.check_call(['cmake', '--build', SHADERC_BIN, '--config',
+                          'Release', '--', cpu], stderr=subprocess.STDOUT,
+                          shell=shell)
 
 
 build()
