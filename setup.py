@@ -1,4 +1,14 @@
+from distutils.command.build import build
 from setuptools import setup
+
+from _cffi_build import shaderc_build
+
+
+class ShadercBuild(build):
+    def run(self):
+        shaderc_build.build()
+        super(ShadercBuild, self).run()
+
 
 setup(
     name="pyshaderc",
@@ -22,5 +32,6 @@ setup(
     ],
     license="Apache 2.0",
     ext_package="pyshaderc",
+    cmdclass={'build': ShadercBuild},
     cffi_modules=["_cffi_build/pyshaderc_build.py:ffi"]
 )
