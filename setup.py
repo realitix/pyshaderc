@@ -12,7 +12,7 @@ class ShadercBuild(build):
 
 setup(
     name="pyshaderc",
-    version='1.1.0',  # can't use pyshader.__version__
+    version='1.1.1',  # can't use pyshader.__version__
     author="realitix",
     author_email="realitix@gmail.com",
     description="Python CFFI binding for shaderc",
