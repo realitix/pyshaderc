@@ -1,5 +1,7 @@
 # PyShaderc
 
+[![Build Status](https://travis-ci.org/realitix/pyshaderc.svg?branch=master)](https://travis-ci.org/realitix/pyshaderc)
+
 Table of Contents
 =================
 
