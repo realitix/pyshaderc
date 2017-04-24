@@ -1,12 +1,11 @@
 language: python
 python:
-  - '2.7'
   - '3.5'
   - '3.6'
   - 'nightly' # currently points to 3.7-dev
 
 install:
-  - python setup.py install
+  - python setup.py build install
 
 script:
   - flake8 pyshaderc
