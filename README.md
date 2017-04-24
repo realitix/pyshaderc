@@ -91,6 +91,16 @@ def compile_into_spirv(raw, stage, filepath, language="glsl",
 pip install pyshaderc
 ```
 
+Or if you want the latest version:
+
+```python
+git clone https://github.com/realitix/pyshaderc.git
+cd pyshaderc
+python setup.py build
+python setup.py install
+```
+
+
 ## How to use it
 
 ### Getting started

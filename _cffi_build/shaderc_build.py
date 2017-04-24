@@ -27,7 +27,7 @@ def build():
         os.makedirs(SHADERC_BIN)
 
     # Prepare
-    shell = platform.system() == 'Windows'
+    windows = platform.system() == 'Windows'
     options = [
         '-DCMAKE_BUILD_TYPE=Release',
         '-DCMAKE_POSITION_INDEPENDENT_CODE=ON',
@@ -35,7 +35,7 @@ def build():
         '-DSHADERC_SKIP_TESTS=ON'
     ]
 
-    if platform.system() == 'Windows':
+    if windows:
         options += [
             '-DCMAKE_C_FLAGS=/nologo /EHsc /MD',
             '-DCMAKE_CXX_FLAGS=/nologo /EHsc /MD',
@@ -46,7 +46,7 @@ def build():
 
     call = ['cmake', '-B'+SHADERC_BIN, '-H'+SHADERC_SRC]
     call += options
-    subprocess.check_call(call, stderr=subprocess.STDOUT, shell=shell)
+    subprocess.check_call(call, stderr=subprocess.STDOUT, shell=windows)
 
     # Build
     cpu = ''
@@ -55,7 +55,7 @@ def build():
 
     subprocess.check_call(['cmake', '--build', SHADERC_BIN, '--config',
                           'Release', '--', cpu], stderr=subprocess.STDOUT,
-                          shell=shell)
+                          shell=windows)
 
 
 if __name__ == '__main__':
