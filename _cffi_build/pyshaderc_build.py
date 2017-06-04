@@ -28,8 +28,6 @@ extern "Python" void release_callback(void*, shaderc_include_result*);
 
 source = """
 #include <stdbool.h>
-#include <stddef.h>
-#include <stdint.h>
 """
 source += raw_header
 
