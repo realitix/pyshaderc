@@ -4,7 +4,6 @@ import platform
 
 
 HERE = path.dirname(path.realpath(__file__))
-STATIC_LIB_FOLDER = path.join(HERE, 'shaderc_build', 'libshaderc')
 LINUX = platform.system() == 'Linux'
 
 
@@ -37,10 +36,14 @@ l = ['shaderc_combined']
 if LINUX:
     l += ['stdc++']
 
+# lib folders
+f1 = path.join(HERE, 'shaderc_build', 'libshaderc')
+f2 = path.join(f1, 'Release')
+
 # configure cffi
 ffi.cdef(cdef)
 ffi.set_source('_pyshaderc', source, libraries=l,
-               library_dirs=[STATIC_LIB_FOLDER])
+               library_dirs=[f1, f2])
 
 
 if __name__ == '__main__':
