@@ -19,7 +19,7 @@ STATIC_LIB_FOLDER = path.join(SHADERC_BIN, 'libshaderc')
 def get_vulkan_sdk_lib():
     if "VULKAN_SDK" in environ.keys():
         if LINUX or MACOS:
-            fvulkan = path.join(environ["VULKAN_SDK"], "lib", "shaderc_combined.a")
+            fvulkan = path.join(environ["VULKAN_SDK"], "lib", "libshaderc_combined.a")
             if path.exists(fvulkan):
                 print("Found shaderc_combined in Vulkan SDK: '%s'" % fvulkan)
                 return fvulkan
