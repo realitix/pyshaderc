@@ -7,7 +7,7 @@ from zipfile import ZipFile
 
 
 HERE = path.dirname(path.realpath(__file__))
-SHADERC_ZIP = path.join(HERE, 'shaderc-cb4f0f6.zip')
+SHADERC_ZIP = path.join(HERE, 'shaderc-aaa44b5.zip')
 SHADERC_SRC = path.join(HERE, 'shaderc')
 SHADERC_BIN = path.join(HERE, 'shaderc_build')
 STATIC_LIB_FOLDER = path.join(SHADERC_BIN, 'libshaderc')
@@ -50,7 +50,7 @@ def build():
 
     # Build
     cpu = ''
-    if platform.system() == 'Linux':
+    if platform.system() in ['Linux', 'Darwin']:
         cpu = '-j' + str(multiprocessing.cpu_count() * 2)
 
     subprocess.check_call(['cmake', '--build', SHADERC_BIN, '--config',

@@ -5,6 +5,7 @@ import platform
 
 HERE = path.dirname(path.realpath(__file__))
 LINUX = platform.system() == 'Linux'
+DARWIN = platform.system() == 'Darwin'
 
 
 # ----------
@@ -33,7 +34,7 @@ source += raw_header
 # libraries path
 l = ['shaderc_combined']
 
-if LINUX:
+if LINUX or DARWIN:
     l += ['stdc++']
 
 # lib folders
